@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -221,19 +222,13 @@
         // Create a new audio element
 const popSound = new Audio('pop.mp3'); // Replace with the correct path to your pop.mp3
 
-function drawCard(type) {
-    // Play the sound effect
-    popSound.play();
-
-    // Your existing logic to draw a card
-    if (type === 'truth') {
-        // Logic for drawing a truth card
-    } else if (type === 'dare') {
-        // Logic for drawing a dare card
-    }
-}
+popSound.volume = 0.4; // Set volume to 50%
 
         function drawCard(type) {
+        popSound.play();
+
+
+
             const card = document.getElementById("card");
             const randomText = type === "truth" ? truths[Math.floor(Math.random() * truths.length)] : dares[Math.floor(Math.random() * dares.length)];
             
@@ -243,6 +238,8 @@ function drawCard(type) {
                 card.classList.add(type, "show");
             }, 300);
         }
+
+    
     </script>
 </body>
 </html>
